@@ -34,7 +34,7 @@ public class SessionController {
 
     //delete by id
     @DeleteMapping
-    @RequestMapping("{id}")
+    @RequestMapping("{id_session}")
     public void deleteSessionById (Integer id) {
         sessionService.deleteSessionById(id);
     }

@@ -33,7 +33,7 @@ public class SpeakerController {
 
     //delete by id
     @DeleteMapping
-    @RequestMapping("{id}")
+    @RequestMapping("{id_speaker}")
     public void deleteSpeakerById (Integer id) {
         speakerService.deleteSpeakerById(id);//sessionService.deleteSessionById(id);
     }
