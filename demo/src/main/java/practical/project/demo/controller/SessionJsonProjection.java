@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class SessionJsonProjection {
-    private Integer idSession;
-    private String nameSession;
+    private Integer id_session;
+    private String name_session;
 }

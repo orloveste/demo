@@ -11,6 +11,7 @@ import practical.project.demo.service.SessionService;
 import java.util.List;
 
 @RestController
+@RequestMapping("/sessions")
 public class SessionController {
     @Autowired
     SessionService sessionService;
@@ -21,7 +22,7 @@ public class SessionController {
     }
     //get endpoint
     @GetMapping
-    @RequestMapping("{id}")
+    @RequestMapping("{id_session}")
     public Session finndSessionById(@PathVariable Integer id) {
         return sessionService.getSessionById(id);
     }

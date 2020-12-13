@@ -15,11 +15,11 @@ public class SpeakerService {
     SpeakerRepository speakerRepository;
 
     //findAll
-    List<Speaker> findAllSpeakers(){
+    public List<Speaker> findAllSpeakers(){
         return speakerRepository.findAll();
     }
     //session dupa id
-    Speaker getSpeakerById(Integer id) {
+    public Speaker getSpeakerById(Integer id) {
         return speakerRepository.getOne(id);
     }
     //create session
