@@ -8,28 +8,28 @@ public class Session {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idSession;
-    private String nameSession;
+    private int id_session;
+    private String name_session;
 
     @ManyToMany
-    @JoinTable(name = "sessions_speakers", joinColumns = @JoinColumn(name = "idSession"),
-            inverseJoinColumns = @JoinColumn(name = "idSpeaker"))
+    @JoinTable(name = "sessions_speakers", joinColumns = @JoinColumn(name = "id_session"),
+            inverseJoinColumns = @JoinColumn(name = "id_speaker"))
     List<Speaker> speakers;
 
     public Session() {}
     public int getIdSession() {
-        return idSession;
+        return id_session;
     }
 
-    public void setIdSession(int idSession) {
-        this.idSession = idSession;
+    public void setIdSession(int id_session) {
+        this.id_session = id_session;
     }
 
     public String getNameSession() {
-        return nameSession;
+        return name_session;
     }
 
-    public void setNameSession(String nameSession) {
-        this.nameSession = nameSession;
+    public void setNameSession(String name_session) {
+        this.name_session = name_session;
     }
 }

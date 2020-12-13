@@ -7,8 +7,8 @@ import java.util.List;
 public class Speaker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idSpeaker;
-    private String nameSpeaker;
+    private int id_speaker;
+    private String name_speaker;
 
     @ManyToMany(mappedBy = "speakers")
     List<Session> sessions;

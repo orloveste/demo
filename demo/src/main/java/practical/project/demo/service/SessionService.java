@@ -14,11 +14,11 @@ public class SessionService {
     SessionRepository sessionRepository;
 
     //findAll
-    List<Session> findAllSessions(){
+    public List<Session> findAllSessions(){
         return sessionRepository.findAll();
     }
     //session dupa id
-    Session getSessionById(Integer id) {
+    public Session getSessionById(Integer id) {
         return sessionRepository.getOne(id);
     }
     //create session
@@ -30,4 +30,6 @@ public class SessionService {
     public void deleteSessionById(Integer id) {
         sessionRepository.deleteById(id);
     }
+
+
 }

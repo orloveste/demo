@@ -3,8 +3,6 @@ package practical.project.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import practical.project.demo.model.Session;
-
 import practical.project.demo.model.Speaker;
 import practical.project.demo.repository.SpeakerRepository;
 
