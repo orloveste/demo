@@ -11,7 +11,6 @@ import practical.project.demo.service.SessionService;
 import java.util.List;
 
 @RestController
-
 public class SessionController {
     @Autowired
     SessionService sessionService;
@@ -30,6 +29,13 @@ public class SessionController {
     @PostMapping
     public Session addSession(@RequestBody Session session) {
         return sessionService.createSession(session);
+    }
+
+    //delete by id
+    @DeleteMapping
+    @RequestMapping("{id}")
+    public void deleteSessionById (Integer id) {
+        sessionService.deleteSessionById(id);
     }
 
 }
