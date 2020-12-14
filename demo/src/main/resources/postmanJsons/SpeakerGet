@@ -1,0 +1,12 @@
+[
+    {
+        "idSpeaker": 1,
+        "nameSpeaker": "Not null try",
+        "sessions": []
+    },
+    {
+        "idSpeaker": 2,
+        "nameSpeaker": "Jaba the Hut",
+        "sessions": []
+    }
+]
