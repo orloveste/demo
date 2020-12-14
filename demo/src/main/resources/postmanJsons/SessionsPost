@@ -1,0 +1,11 @@
+post
+{
+    "idSession": "",
+    "nameSession": "test"
+}
+result
+{
+    "idSession": 1,
+    "nameSession": "test",
+    "speakers": null
+}

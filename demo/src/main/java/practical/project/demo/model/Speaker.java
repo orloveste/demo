@@ -10,8 +10,8 @@ import java.util.List;
 public class Speaker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idSpeaker;
-    private String nameSpeaker;
+    private int idSpeaker;//id for entry in postman
+    private String nameSpeaker;//id for entry in postman
 //    private Long  speakerId;
 //    private String speakerName;
 
