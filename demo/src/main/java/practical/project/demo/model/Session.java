@@ -1,35 +1,39 @@
 package practical.project.demo.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
 
+@Data
 @Entity(name = "sessions")
 public class Session {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_session;
-    private String name_session;
-
+    private int idSession;
+    private String nameSession;
+//    private Long sessionId;
+//    private String sessionName;
     @ManyToMany
-    @JoinTable(name = "sessions_speakers", joinColumns = @JoinColumn(name = "id_session"),
-            inverseJoinColumns = @JoinColumn(name = "id_speaker"))
+    @JoinTable(name = "session_speaker", joinColumns = @JoinColumn(name = "session_id"),
+            inverseJoinColumns = @JoinColumn(name = "speaker_id"))
     List<Speaker> speakers;
 
     public Session() {}
-    public int getIdSession() {
-        return id_session;
+    /*public int getIdSession() {
+        return idSession;
     }
 
-    public void setIdSession(int id_session) {
-        this.id_session = id_session;
+    public void setIdSession(int idSession) {
+        this.idSession = idSession;
     }
 
     public String getNameSession() {
-        return name_session;
+        return nameSession;
     }
 
     public void setNameSession(String name_session) {
-        this.name_session = name_session;
-    }
+        this.nameSession = nameSession;
+    }*/
 }
