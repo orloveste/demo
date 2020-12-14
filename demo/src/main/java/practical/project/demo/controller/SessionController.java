@@ -21,10 +21,10 @@ public class SessionController {
         return sessionService.findAllSessions();
     }
     //get endpoint
-    @GetMapping
-    @RequestMapping("{id_session}")
-    public Session finndSessionById(@PathVariable Integer id) {
-        return sessionService.getSessionById(id);
+    @GetMapping/*("idSession")*/ //rev1
+    @RequestMapping("/{id}")/*Session*/
+    public Session finndSessionById(@PathVariable ("id") Integer id/*Session*/) {
+        return sessionService.getSessionById(id/*Session*/);
     }
 
     @PostMapping
@@ -33,8 +33,8 @@ public class SessionController {
     }
 
     //delete by id
-    @DeleteMapping
-    @RequestMapping("{id_session}")
+    @DeleteMapping //rev1
+    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)/*_session*/
     public void deleteSessionById (Integer id) {
         sessionService.deleteSessionById(id);
     }

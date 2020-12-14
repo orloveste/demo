@@ -18,11 +18,11 @@ public class SpeakerService {
     public List<Speaker> /*findAllSpeakers()*/ getAllSpeakers() {//rev1
         return speakerRepository.findAll();
     }
-    //session dupa id
+    //speaker dupa id
     public Speaker getSpeakerById(Integer id/*Speaker*/) {//rev1
         return speakerRepository.getOne(id/*Speaker*/);//rev1
     }
-    //create session
+    //create speaker
     public Speaker /*create*/addSpeaker(Speaker /*newS*/speaker) {//rev1
         return speakerRepository.saveAndFlush(/*newS*/speaker);//rev1
     }

@@ -15,26 +15,34 @@ public class SpeakerController {
     @Autowired
     SpeakerService speakerService;
     //get
-    @GetMapping
+    /*@GetMapping
     public List<Speaker> findAllSpeakers() {
         return speakerService.findAllSpeakers();
+    }*/
+    @RequestMapping(method = RequestMethod.GET)
+    public List<Speaker> speakerList() {
+        return speakerService.getAllSpeakers();
     }
     //get endpoint
-    @GetMapping
-    @RequestMapping("{id_speaker}")
-    public Speaker finndSpeakerById(@PathVariable Integer id) {
+    /*@GetMapping
+    @RequestMapping("{id_Speaker}")
+    public Speaker finndSpeakerById(@PathVariable Integer idSpeaker) {
+        return speakerService.getSpeakerById(idSpeaker);
+    }*/
+    @RequestMapping(value = "{id}", method = RequestMethod.GET)//rev1
+    public Speaker getSpeakerById(@PathVariable Integer id) {
         return speakerService.getSpeakerById(id);
     }
 
-    @PostMapping
+    @PostMapping//rev1
     public Speaker addSpeaker(@RequestBody Speaker speaker) {
-        return speakerService.createSpeaker(speaker);//createSession(session);
+        return speakerService/*.createSpeaker*/.addSpeaker (speaker);//createSession(session);
     }
 
     //delete by id
-    @DeleteMapping
-    @RequestMapping("{id_speaker}")
-    public void deleteSpeakerById (Integer id) {
-        speakerService.deleteSpeakerById(id);//sessionService.deleteSessionById(id);
+    /*@DeleteMapping*/ //rev1
+    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)/*_speaker*/
+    public void deleteSpeakerById (Integer id/*Speaker*/) {
+        speakerService.deleteSpeakerById(id/*Speaker*/);//sessionService.deleteSessionById(id);
     }
 }
