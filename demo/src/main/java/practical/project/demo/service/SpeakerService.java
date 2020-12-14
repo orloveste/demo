@@ -15,20 +15,20 @@ public class SpeakerService {
     SpeakerRepository speakerRepository;
 
     //findAll
-    public List<Speaker> findAllSpeakers(){
+    public List<Speaker> /*findAllSpeakers()*/ getAllSpeakers() {//rev1
         return speakerRepository.findAll();
     }
     //session dupa id
-    public Speaker getSpeakerById(Integer id) {
-        return speakerRepository.getOne(id);
+    public Speaker getSpeakerById(Integer id/*Speaker*/) {//rev1
+        return speakerRepository.getOne(id/*Speaker*/);//rev1
     }
     //create session
-    public Speaker createSpeaker(Speaker newSpeaker) {
-        return speakerRepository.saveAndFlush(newSpeaker);
+    public Speaker /*create*/addSpeaker(Speaker /*newS*/speaker) {//rev1
+        return speakerRepository.saveAndFlush(/*newS*/speaker);//rev1
     }
 
     //delete
-    public void deleteSpeakerById(Integer id) {
-        speakerRepository.deleteById(id);
+    public void deleteSpeakerById(Integer id/*Speaker*/) {
+        speakerRepository.deleteById(id/*Speaker*/);
     }
 }

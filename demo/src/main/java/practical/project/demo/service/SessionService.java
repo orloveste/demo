@@ -18,14 +18,13 @@ public class SessionService {
         return sessionRepository.findAll();
     }
     //session dupa id
-    public Session getSessionById(Integer id) {
-        return sessionRepository.getOne(id);
+    public Session getSessionById(Integer id/*Session*/) {//rev1
+        return sessionRepository.getOne(id/*Session*/);//rev1
     }
     //create session
     public Session createSession(Session newSession) {
         return sessionRepository.saveAndFlush(newSession);
     }
-
     //delete
     public void deleteSessionById(Integer id) {
         sessionRepository.deleteById(id);
