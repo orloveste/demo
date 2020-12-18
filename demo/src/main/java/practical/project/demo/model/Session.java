@@ -1,39 +1,52 @@
 package practical.project.demo.model;
 
-import lombok.Data;
-
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+
 @Entity(name = "sessions")
 public class Session {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idSession;
-    private String nameSession;
-//    private Long sessionId;
-//    private String sessionName;
+    private int sessionId;
+    private String sessionName;
+    private String sessionDescription;
     @ManyToMany
-    @JoinTable(name = "session_speaker", joinColumns = @JoinColumn(name = "session_id"),
+    @JoinTable(name = "session_speakers", joinColumns = @JoinColumn(name = "session_id"),
             inverseJoinColumns = @JoinColumn(name = "speaker_id"))
     List<Speaker> speakers;
 
     public Session() {}
-    /*public int getIdSession() {
-        return idSession;
+
+    public int getSessionId() {
+        return sessionId;
     }
 
-    public void setIdSession(int idSession) {
-        this.idSession = idSession;
+    public void setSessionId(int sessionId) {
+        this.sessionId = sessionId;
     }
 
-    public String getNameSession() {
-        return nameSession;
+    public String getSessionName() {
+        return sessionName;
     }
 
-    public void setNameSession(String name_session) {
-        this.nameSession = nameSession;
-    }*/
+    public void setSessionName(String sessionName) {
+        this.sessionName = sessionName;
+    }
+
+    public String getSessionDescription() {
+        return sessionDescription;
+    }
+
+    public void setSessionDescription(String sessionDescription) {
+        this.sessionDescription = sessionDescription;
+    }
+
+    public List<Speaker> getSpeakers() {
+        return speakers;
+    }
+
+    public void setSpeakers(List<Speaker> speakers) {
+        this.speakers = speakers;
+    }
 }
