@@ -12,27 +12,30 @@ import java.util.List;
 public class SessionController {
     @Autowired
     SessionService sessionService;
-    //get
+
+    //GET endpoint to retrive all the sessions
     @GetMapping
-    public List<Session> findAllSesions() {
+    public List<Session> findAllSessions(){
         return sessionService.findAllSessions();
     }
-    //get endpoint
-    @GetMapping
-    @RequestMapping("/session/{id}")
-    public Session findSessionById(@PathVariable Integer id) {
+
+    //GET endpoint to retrieve a session by id
+    @GetMapping("/session/{id}")
+    public Session findSessionById(@PathVariable Long id){
         return sessionService.getSessionById(id);
     }
 
+    //POST endpoint to create a new session
     @PostMapping("/session")
-    public Session addSession(@RequestBody Session session) {
+    public Session addSession(@RequestBody Session session){
         return sessionService.createSession(session);
     }
 
-    //delete by id
+    //DELETE endpoint to delete a session by id
     @DeleteMapping
-    @RequestMapping(value = "/session/{id}")
-    public void deleteSessionById (@PathVariable Integer id) {
+    @RequestMapping("/session/{id}")
+    public void deleteSessionById(@PathVariable Long id){
         sessionService.deleteSessionById(id);
+
     }
 }

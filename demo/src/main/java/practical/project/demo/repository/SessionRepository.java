@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import practical.project.demo.model.Session;
 
 @Repository
-public interface SessionRepository extends JpaRepository<Session, Integer> {
+public interface SessionRepository extends JpaRepository<Session, Long> {
 }

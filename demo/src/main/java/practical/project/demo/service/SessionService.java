@@ -9,26 +9,26 @@ import java.util.List;
 
 @Service
 public class SessionService {
-    //trebuie sa injectam repository
     @Autowired
     SessionRepository sessionRepository;
 
-    //findAll
+    //findAllSessions
     public List<Session> findAllSessions(){
         return sessionRepository.findAll();
     }
-    //session dupa id
-    public Session getSessionById(Integer id/*Session*/) {//rev1
-        return sessionRepository.getOne(id/*Session*/);//rev1
+
+    //getSessionById
+    public Session getSessionById(Long id){
+        return sessionRepository.findById(id).get();
     }
-    //create session
-    public Session createSession(Session newSession) {
+
+    //createSession/addSession
+    public Session createSession(Session newSession){
         return sessionRepository.saveAndFlush(newSession);
     }
-    //delete
-    public void deleteSessionById(Integer id) {
+
+    //deleteSessionById
+    public void deleteSessionById(Long id){
         sessionRepository.deleteById(id);
     }
-
-
 }

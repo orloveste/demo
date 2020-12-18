@@ -9,25 +9,29 @@ import java.util.List;
 @RestController
 @RequestMapping("/speakers")
 public class SpeakerController {
+
     @Autowired
     SpeakerService speakerService;
-    //get
+
     @RequestMapping(method = RequestMethod.GET)
-    public List<Speaker> speakerList() {
+    public List<Speaker> speakerList(){
         return speakerService.getAllSpeakers();
     }
-    //get endpoint
+
     @RequestMapping(value = "/speaker/{id}", method = RequestMethod.GET)
-    public Speaker getSpeakerById(@PathVariable Integer id) {
+    public Speaker getSpeakerById(@PathVariable Long id) {
         return speakerService.getSpeakerById(id);
     }
+
     @RequestMapping(value = "/speaker", method = RequestMethod.POST)
-    public Speaker createSpeaker(@RequestBody Speaker speaker) {
+    public Speaker createSpeaker(@RequestBody Speaker speaker){
         return speakerService.addSpeaker(speaker);
     }
-    //delete by id
+
+    //@DeleteMapping
     @RequestMapping(value = "/speaker/{id}", method = RequestMethod.DELETE)
-    public void deleteSpeakerById (@PathVariable Integer id) {
+    public void deleteSpeakerById(@PathVariable Long id){
         speakerService.deleteSpeakerById(id);
+
     }
 }

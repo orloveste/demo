@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import practical.project.demo.model.Speaker;
 
 @Repository
-public interface SpeakerRepository extends JpaRepository<Speaker, Integer> {
+public interface SpeakerRepository extends JpaRepository<Speaker, Long> {
 }

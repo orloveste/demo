@@ -7,22 +7,25 @@ import java.util.List;
 @Entity(name = "sessions")
 public class Session {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int sessionId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long sessionId;
     private String sessionName;
     private String sessionDescription;
+
+
     @ManyToMany
-    @JoinTable(name = "session_speakers", joinColumns = @JoinColumn(name = "session_id"),
+    @JoinTable(name = "sessions_speakers", joinColumns = @JoinColumn(name = "session_id"),
             inverseJoinColumns = @JoinColumn(name = "speaker_id"))
     List<Speaker> speakers;
 
-    public Session() {}
+    public Session() {
+    }
 
-    public int getSessionId() {
+    public Long getSessionId() {
         return sessionId;
     }
 
-    public void setSessionId(int sessionId) {
+    public void setSessionId(Long sessionId) {
         this.sessionId = sessionId;
     }
 

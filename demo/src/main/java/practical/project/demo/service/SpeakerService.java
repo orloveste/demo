@@ -10,25 +10,29 @@ import java.util.List;
 
 @Service
 public class SpeakerService {
-    //trebuie sa injectam repository
+
     @Autowired
     SpeakerRepository speakerRepository;
 
-    //findAll
-    public List<Speaker> /*findAllSpeakers()*/ getAllSpeakers() {//rev1
+
+    //findAllSpeakers
+    public List<Speaker> getAllSpeakers(){
         return speakerRepository.findAll();
     }
-    //speaker dupa id
-    public Speaker getSpeakerById(Integer id/*Speaker*/) {//rev1
-        return speakerRepository.getOne(id/*Speaker*/);//rev1
-    }
-    //create speaker
-    public Speaker /*create*/addSpeaker(Speaker /*newS*/speaker) {//rev1
-        return speakerRepository.saveAndFlush(/*newS*/speaker);//rev1
+
+
+    //findSpeakerByID
+    public Speaker getSpeakerById(Long id){
+        return speakerRepository.findById(id).get();
     }
 
-    //delete
-    public void deleteSpeakerById(Integer id/*Speaker*/) {
-        speakerRepository.deleteById(id/*Speaker*/);
+    //createSpeaker
+    public Speaker addSpeaker(Speaker speaker){
+        return speakerRepository.saveAndFlush(speaker);
+    }
+
+    //deleteSpeakerById
+    public void deleteSpeakerById(Long id){
+        speakerRepository.deleteById(id);
     }
 }
