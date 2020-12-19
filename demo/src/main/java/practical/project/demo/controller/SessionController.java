@@ -20,7 +20,7 @@ public class SessionController {
     }
 
     //GET endpoint to retrieve a session by id
-    @GetMapping("/session/{id}")
+    @GetMapping("/session/{id}")// denumire url: sessions/session/{id}
     public Session findSessionById(@PathVariable Long id){
         return sessionService.getSessionById(id);
     }
