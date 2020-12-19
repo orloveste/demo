@@ -1,9 +1,11 @@
 package practical.project.demo.model;
 
+import lombok.AllArgsConstructor;
+
 import javax.persistence.*;
 import java.util.List;
 
-
+@AllArgsConstructor
 @Entity(name = "sessions")
 public class Session {
     @Id
@@ -43,13 +45,5 @@ public class Session {
 
     public void setSessionDescription(String sessionDescription) {
         this.sessionDescription = sessionDescription;
-    }
-
-    public List<Speaker> getSpeakers() {
-        return speakers;
-    }
-
-    public void setSpeakers(List<Speaker> speakers) {
-        this.speakers = speakers;
     }
 }
