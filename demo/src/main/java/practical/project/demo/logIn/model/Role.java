@@ -1,14 +1,19 @@
 package practical.project.demo.logIn.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Data
 @Entity(name="roles")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String roleName;
+
+    @OneToMany(mappedBy = "userRole")
+    List<User> user;
+
 }
