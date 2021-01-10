@@ -10,7 +10,7 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    User addUser (User user) {
+    public User addUser (User user) {
         return  userRepository.saveAndFlush(user);
     }
 }
