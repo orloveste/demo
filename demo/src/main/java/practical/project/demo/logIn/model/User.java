@@ -3,6 +3,8 @@ package practical.project.demo.logIn.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Data
@@ -13,8 +15,16 @@ public class User {
     private Long id;
     private String userName;
     private String password;
+    private String email;
+    private String passwordConfirm;
 
-    @ManyToOne
-    @JoinColumn(name = "roleId")
-    Role userRoles;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+            @JoinTable(
+                    name = "user_roles",
+                    joinColumns = @JoinColumn(name = "user_id"),
+                    inverseJoinColumns = @JoinColumn(name = "role_id")
+            )
+
+    Set<User> users = new HashSet<>();
 }
