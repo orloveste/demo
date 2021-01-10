@@ -7,5 +7,5 @@ import practical.project.demo.logIn.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    public User getUserByName(String username);
+//    public User getUserByName(String username);
 }
